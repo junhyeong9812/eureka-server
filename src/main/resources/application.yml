@@ -33,7 +33,7 @@ management:
       prometheus:
         enabled: true
     tags:
-      application: ${spring.application.name}
+      application: eureka-server
   zipkin:
     tracing:
       endpoint: "http://localhost:9411/api/v2/spans" # Zipkin 수집 서버의 엔드포인트 URL을 입력합니다.
