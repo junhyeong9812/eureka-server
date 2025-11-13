@@ -20,24 +20,15 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,prometheus,metrics, refresh
+        include: refresh,health,info,prometheus,metrics
   endpoint:
     prometheus:
       enabled: true
     metrics:
       enabled: true
-    refresh:
-      enabled: true
-  metrics:
-    export:
-      prometheus:
-        enabled: true
-    tags:
-      application: eureka-server
-  zipkin:
-    tracing:
-      endpoint: "http://localhost:9411/api/v2/spans" # Zipkin 수집 서버의 엔드포인트 URL을 입력합니다.
-  tracing:
-    sampling:
-      probability: 1.0
+      export:
+        prometheus:
+          enabled: true
+      tags:
+        application: ${spring.application.name}
 
